@@ -1,0 +1,23 @@
+{
+    "name": "DCOS cluster color",
+    "version": "1.0",
+    "description": "Assign different colors to the DC/OS UI so you don't do bad stuff in production by mistake.",
+    "homepage_url": "https://github.com/vrachieru/dcos-cluster-color",
+    "manifest_version": 2,
+
+    "content_scripts": [
+        {
+            "run_at": "document_start",
+            // no regex support...
+            "matches": [
+                "*://cluster_host_1/*",
+                "*://cluster_host_2/*",
+                "*://cluster_host_3/*",
+                "*://cluster_host_4/*",
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
